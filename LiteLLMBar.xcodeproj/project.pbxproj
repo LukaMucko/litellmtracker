@@ -507,7 +507,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-framework Charts";
-				PRODUCT_BUNDLE_IDENTIFIER = at.aithyra.litellm.menubar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.litellmtracker.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
@@ -542,7 +542,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-framework Charts";
-				PRODUCT_BUNDLE_IDENTIFIER = at.aithyra.litellm.menubar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.litellmtracker.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
@@ -564,7 +564,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
-				PRODUCT_BUNDLE_IDENTIFIER = at.aithyra.litellm.menubar.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.litellmtracker.app.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_STRICT_CONCURRENCY = complete;
@@ -584,7 +584,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
-				PRODUCT_BUNDLE_IDENTIFIER = at.aithyra.litellm.menubar.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.litellmtracker.app.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_STRICT_CONCURRENCY = complete;

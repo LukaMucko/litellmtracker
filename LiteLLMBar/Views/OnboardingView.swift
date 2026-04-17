@@ -45,7 +45,7 @@ struct OnboardingView: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
 
-                TextField("https://llms.apps.aithyra.at", text: $baseURL)
+                TextField("http://localhost:4000", text: $baseURL)
                     .textFieldStyle(.roundedBorder)
             }
 

@@ -25,7 +25,7 @@ final class SpendStore {
         static let currencyCode = "currencyCode"
     }
 
-    private static let defaultBaseURL = "https://llms.apps.aithyra.at"
+    private static let defaultBaseURL = "http://localhost:4000"
 
     private(set) var summary = SpendSummary.empty
     private(set) var lastRefresh: Date?

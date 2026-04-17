@@ -3,7 +3,7 @@ import OSLog
 
 extension Logger {
     private static var subsystem: String {
-        Bundle.main.bundleIdentifier ?? "at.aithyra.litellm.menubar"
+        Bundle.main.bundleIdentifier ?? "com.litellmtracker.app"
     }
 
     static let network = Logger(subsystem: subsystem, category: "network")

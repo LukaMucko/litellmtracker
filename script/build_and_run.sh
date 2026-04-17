@@ -3,7 +3,7 @@ set -euo pipefail
 
 MODE="${1:-run}"
 APP_NAME="LiteLLMBar"
-BUNDLE_ID="at.aithyra.litellm.menubar"
+BUNDLE_ID="com.litellmtracker.app"
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PROJECT="$ROOT_DIR/LiteLLMBar.xcodeproj"
 DERIVED_DATA="$ROOT_DIR/build/DerivedData"
