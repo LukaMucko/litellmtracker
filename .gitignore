@@ -1,0 +1,11 @@
+.DS_Store
+.codex/
+.playwright-mcp/
+.claude/
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcuserdata/
+LiteLLMBar.xcodeproj/project.xcworkspace/xcuserdata/
+LiteLLMBar.xcodeproj/xcuserdata/

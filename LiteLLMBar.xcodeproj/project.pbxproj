@@ -1,0 +1,630 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		010000000000000000000001 /* LiteLLMBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000001 /* LiteLLMBarApp.swift */; };
+		010000000000000000000002 /* MenuBarLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000002 /* MenuBarLabel.swift */; };
+		010000000000000000000003 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000003 /* PopoverView.swift */; };
+		010000000000000000000004 /* SpendDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000004 /* SpendDashboardView.swift */; };
+		010000000000000000000005 /* HeroSpendCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000005 /* HeroSpendCard.swift */; };
+		010000000000000000000006 /* SpendCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000006 /* SpendCard.swift */; };
+		010000000000000000000007 /* ModelBreakdownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000007 /* ModelBreakdownList.swift */; };
+		010000000000000000000008 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000008 /* OnboardingView.swift */; };
+		010000000000000000000009 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000009 /* SettingsView.swift */; };
+		01000000000000000000000A /* GlassModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02000000000000000000000A /* GlassModifiers.swift */; };
+		01000000000000000000000B /* DailyActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02000000000000000000000B /* DailyActivity.swift */; };
+		01000000000000000000000C /* SpendSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02000000000000000000000C /* SpendSummary.swift */; };
+		01000000000000000000000D /* ModelSpend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02000000000000000000000D /* ModelSpend.swift */; };
+		01000000000000000000000E /* TimeRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02000000000000000000000E /* TimeRange.swift */; };
+		01000000000000000000000F /* LiteLLMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02000000000000000000000F /* LiteLLMClient.swift */; };
+		010000000000000000000010 /* SpendStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000010 /* SpendStore.swift */; };
+		010000000000000000000011 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000011 /* KeychainStore.swift */; };
+		010000000000000000000012 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000012 /* CurrencyFormatter.swift */; };
+		010000000000000000000013 /* Logger+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000013 /* Logger+Category.swift */; };
+		010000000000000000000014 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000014 /* LaunchAtLogin.swift */; };
+		010000000000000000000015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000015 /* Assets.xcassets */; };
+		010000000000000000000016 /* SpendSummaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000018 /* SpendSummaryTests.swift */; };
+		010000000000000000000017 /* LiteLLMClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020000000000000000000019 /* LiteLLMClientTests.swift */; };
+		010000000000000000000018 /* ChartPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02000000000000000000001C /* ChartPoint.swift */; };
+		01000000000000000000001B /* SpendLogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02000000000000000000001F /* SpendLogEntry.swift */; };
+		010000000000000000000019 /* ExchangeRateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02000000000000000000001D /* ExchangeRateService.swift */; };
+		01000000000000000000001A /* SpendChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02000000000000000000001E /* SpendChartView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		030000000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 040000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 050000000000000000000001;
+			remoteInfo = LiteLLMBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		020000000000000000000001 /* LiteLLMBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteLLMBarApp.swift; sourceTree = "<group>"; };
+		020000000000000000000002 /* MenuBarLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarLabel.swift; sourceTree = "<group>"; };
+		020000000000000000000003 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		020000000000000000000004 /* SpendDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendDashboardView.swift; sourceTree = "<group>"; };
+		020000000000000000000005 /* HeroSpendCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroSpendCard.swift; sourceTree = "<group>"; };
+		020000000000000000000006 /* SpendCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendCard.swift; sourceTree = "<group>"; };
+		020000000000000000000007 /* ModelBreakdownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelBreakdownList.swift; sourceTree = "<group>"; };
+		020000000000000000000008 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		020000000000000000000009 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		02000000000000000000000A /* GlassModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassModifiers.swift; sourceTree = "<group>"; };
+		02000000000000000000000B /* DailyActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyActivity.swift; sourceTree = "<group>"; };
+		02000000000000000000000C /* SpendSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendSummary.swift; sourceTree = "<group>"; };
+		02000000000000000000000D /* ModelSpend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSpend.swift; sourceTree = "<group>"; };
+		02000000000000000000000E /* TimeRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRange.swift; sourceTree = "<group>"; };
+		02000000000000000000000F /* LiteLLMClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteLLMClient.swift; sourceTree = "<group>"; };
+		020000000000000000000010 /* SpendStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendStore.swift; sourceTree = "<group>"; };
+		020000000000000000000011 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		020000000000000000000012 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		020000000000000000000013 /* Logger+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Category.swift"; sourceTree = "<group>"; };
+		020000000000000000000014 /* LaunchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogin.swift; sourceTree = "<group>"; };
+		020000000000000000000015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		020000000000000000000016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		020000000000000000000017 /* LiteLLMBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiteLLMBar.entitlements; sourceTree = "<group>"; };
+		020000000000000000000018 /* SpendSummaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendSummaryTests.swift; sourceTree = "<group>"; };
+		020000000000000000000019 /* LiteLLMClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteLLMClientTests.swift; sourceTree = "<group>"; };
+		02000000000000000000001A /* LiteLLMBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiteLLMBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02000000000000000000001B /* LiteLLMBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiteLLMBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02000000000000000000001C /* ChartPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartPoint.swift; sourceTree = "<group>"; };
+		02000000000000000000001D /* ExchangeRateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateService.swift; sourceTree = "<group>"; };
+		02000000000000000000001E /* SpendChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendChartView.swift; sourceTree = "<group>"; };
+		02000000000000000000001F /* SpendLogEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendLogEntry.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		060000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		060000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		070000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				070000000000000000000002 /* LiteLLMBar */,
+				07000000000000000000000A /* Tests */,
+				07000000000000000000000B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		070000000000000000000002 /* LiteLLMBar */ = {
+			isa = PBXGroup;
+			children = (
+				070000000000000000000003 /* App */,
+				070000000000000000000004 /* MenuBar */,
+				070000000000000000000005 /* Views */,
+				070000000000000000000006 /* Model */,
+				070000000000000000000007 /* Services */,
+				070000000000000000000008 /* Utilities */,
+				070000000000000000000009 /* Resources */,
+				020000000000000000000017 /* LiteLLMBar.entitlements */,
+			);
+			path = LiteLLMBar;
+			sourceTree = "<group>";
+		};
+		070000000000000000000003 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				020000000000000000000001 /* LiteLLMBarApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		070000000000000000000004 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				020000000000000000000002 /* MenuBarLabel.swift */,
+				020000000000000000000003 /* PopoverView.swift */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		070000000000000000000005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				020000000000000000000004 /* SpendDashboardView.swift */,
+				020000000000000000000005 /* HeroSpendCard.swift */,
+				020000000000000000000006 /* SpendCard.swift */,
+				020000000000000000000007 /* ModelBreakdownList.swift */,
+				020000000000000000000008 /* OnboardingView.swift */,
+				020000000000000000000009 /* SettingsView.swift */,
+				02000000000000000000000A /* GlassModifiers.swift */,
+				02000000000000000000001E /* SpendChartView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		070000000000000000000006 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				02000000000000000000000B /* DailyActivity.swift */,
+				02000000000000000000000C /* SpendSummary.swift */,
+				02000000000000000000000D /* ModelSpend.swift */,
+				02000000000000000000000E /* TimeRange.swift */,
+				02000000000000000000001C /* ChartPoint.swift */,
+				02000000000000000000001F /* SpendLogEntry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		070000000000000000000007 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				02000000000000000000000F /* LiteLLMClient.swift */,
+				020000000000000000000010 /* SpendStore.swift */,
+				020000000000000000000011 /* KeychainStore.swift */,
+				02000000000000000000001D /* ExchangeRateService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		070000000000000000000008 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				020000000000000000000012 /* CurrencyFormatter.swift */,
+				020000000000000000000013 /* Logger+Category.swift */,
+				020000000000000000000014 /* LaunchAtLogin.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		070000000000000000000009 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				020000000000000000000015 /* Assets.xcassets */,
+				020000000000000000000016 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		07000000000000000000000A /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				020000000000000000000018 /* SpendSummaryTests.swift */,
+				020000000000000000000019 /* LiteLLMClientTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		07000000000000000000000B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02000000000000000000001A /* LiteLLMBar.app */,
+				02000000000000000000001B /* LiteLLMBarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		050000000000000000000001 /* LiteLLMBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 080000000000000000000003 /* Build configuration list for PBXNativeTarget "LiteLLMBar" */;
+			buildPhases = (
+				090000000000000000000001 /* Sources */,
+				060000000000000000000001 /* Frameworks */,
+				0A0000000000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LiteLLMBar;
+			productName = LiteLLMBar;
+			productReference = 02000000000000000000001A /* LiteLLMBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		050000000000000000000002 /* LiteLLMBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 080000000000000000000004 /* Build configuration list for PBXNativeTarget "LiteLLMBarTests" */;
+			buildPhases = (
+				090000000000000000000002 /* Sources */,
+				060000000000000000000002 /* Frameworks */,
+				0A0000000000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B0000000000000000000001 /* PBXTargetDependency */,
+			);
+			name = LiteLLMBarTests;
+			productName = LiteLLMBarTests;
+			productReference = 02000000000000000000001B /* LiteLLMBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		040000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1740;
+				LastUpgradeCheck = 1740;
+				TargetAttributes = {
+					050000000000000000000001 = {
+						CreatedOnToolsVersion = 17.4;
+					};
+					050000000000000000000002 = {
+						CreatedOnToolsVersion = 17.4;
+						TestTargetID = 050000000000000000000001;
+					};
+				};
+			};
+			buildConfigurationList = 080000000000000000000001 /* Build configuration list for PBXProject "LiteLLMBar" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 070000000000000000000001;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 07000000000000000000000B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				050000000000000000000001 /* LiteLLMBar */,
+				050000000000000000000002 /* LiteLLMBarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A0000000000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010000000000000000000015 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A0000000000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		090000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010000000000000000000001 /* LiteLLMBarApp.swift in Sources */,
+				010000000000000000000002 /* MenuBarLabel.swift in Sources */,
+				010000000000000000000003 /* PopoverView.swift in Sources */,
+				010000000000000000000004 /* SpendDashboardView.swift in Sources */,
+				010000000000000000000005 /* HeroSpendCard.swift in Sources */,
+				010000000000000000000006 /* SpendCard.swift in Sources */,
+				010000000000000000000007 /* ModelBreakdownList.swift in Sources */,
+				010000000000000000000008 /* OnboardingView.swift in Sources */,
+				010000000000000000000009 /* SettingsView.swift in Sources */,
+				01000000000000000000000A /* GlassModifiers.swift in Sources */,
+				01000000000000000000000B /* DailyActivity.swift in Sources */,
+				01000000000000000000000C /* SpendSummary.swift in Sources */,
+				01000000000000000000000D /* ModelSpend.swift in Sources */,
+				01000000000000000000000E /* TimeRange.swift in Sources */,
+				01000000000000000000000F /* LiteLLMClient.swift in Sources */,
+				010000000000000000000010 /* SpendStore.swift in Sources */,
+				010000000000000000000011 /* KeychainStore.swift in Sources */,
+				010000000000000000000012 /* CurrencyFormatter.swift in Sources */,
+				010000000000000000000013 /* Logger+Category.swift in Sources */,
+				010000000000000000000014 /* LaunchAtLogin.swift in Sources */,
+				010000000000000000000018 /* ChartPoint.swift in Sources */,
+				010000000000000000000019 /* ExchangeRateService.swift in Sources */,
+				01000000000000000000001A /* SpendChartView.swift in Sources */,
+				01000000000000000000001B /* SpendLogEntry.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		090000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010000000000000000000016 /* SpendSummaryTests.swift in Sources */,
+				010000000000000000000017 /* LiteLLMClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0B0000000000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 050000000000000000000001 /* LiteLLMBar */;
+			targetProxy = 030000000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C0000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		0C0000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		0C0000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LiteLLMBar/LiteLLMBar.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LiteLLMBar/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-framework Charts";
+				PRODUCT_BUNDLE_IDENTIFIER = at.aithyra.litellm.menubar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		0C0000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LiteLLMBar/LiteLLMBar.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LiteLLMBar/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-framework Charts";
+				PRODUCT_BUNDLE_IDENTIFIER = at.aithyra.litellm.menubar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		0C0000000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = at.aithyra.litellm.menubar.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LiteLLMBar.app/Contents/MacOS/LiteLLMBar";
+			};
+			name = Debug;
+		};
+		0C0000000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = at.aithyra.litellm.menubar.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LiteLLMBar.app/Contents/MacOS/LiteLLMBar";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		080000000000000000000001 /* Build configuration list for PBXProject "LiteLLMBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C0000000000000000000001 /* Debug */,
+				0C0000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		080000000000000000000003 /* Build configuration list for PBXNativeTarget "LiteLLMBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C0000000000000000000003 /* Debug */,
+				0C0000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		080000000000000000000004 /* Build configuration list for PBXNativeTarget "LiteLLMBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C0000000000000000000005 /* Debug */,
+				0C0000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 040000000000000000000001 /* Project object */;
+}
