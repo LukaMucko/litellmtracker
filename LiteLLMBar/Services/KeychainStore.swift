@@ -7,13 +7,13 @@ enum APIKeyStore {
         }
 
         let file = FileManager.default.homeDirectoryForCurrentUser
-            .appendingPathComponent(".config/litellm/api_key")
+            .appendingPathComponent(".config/litellmtracker/api_key")
         let key = try? String(contentsOf: file, encoding: .utf8)
             .trimmingCharacters(in: .whitespacesAndNewlines)
         return key?.isEmpty == false ? key : nil
     }
 
     static var configPath: String {
-        "~/.config/litellm/api_key"
+        "~/.config/litellmtracker/api_key"
     }
 }

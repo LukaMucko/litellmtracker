@@ -1,74 +1,79 @@
-# LiteLLMBar
+# LiteLLM Tracker
 
-Native macOS 26 menu bar app for LiteLLM spend tracking. It shows today's spend in the menu bar, opens a SwiftUI/Liquid Glass popover with range totals and per-model spend, and stores the LiteLLM virtual key only in Keychain.
+A native macOS menu bar app for tracking your [LiteLLM](https://github.com/BerriAI/litellm) proxy spend. Shows today's cost at a glance in the menu bar and opens a Liquid Glass popover with spend totals, an activity chart, and a per-model breakdown.
+
+![macOS 26](https://img.shields.io/badge/macOS-26%20Tahoe-blue)
+
+## Features
+
+- **Menu bar label** — live today's spend, e.g. `💸 $4.21`
+- **Spend cards** — Today, 7 days, Month, All time
+- **Activity chart** — 7D / 30D smooth area chart with hover tooltips
+- **Model breakdown** — spend, tokens, and requests per model
+- **USD / EUR** — live exchange rate via frankfurter.app
+- **Auto-refresh** — configurable interval (10 s – 1 h)
+- **Launch at login**
 
 ## Requirements
 
-- macOS 26 Tahoe
-- Xcode 26 or later
+- macOS 26 Tahoe or later
 - Apple Silicon Mac
-- LiteLLM virtual key with Default permissions
+- A running LiteLLM proxy instance
+- A LiteLLM virtual key with at minimum **Default** permissions (needs access to `/user/daily/activity`)
 
-No third-party SDKs or Swift Package dependencies are used.
+## Installation
 
-## Build
+Download the latest `.zip` from [Releases](../../releases), unzip, drag `LiteLLMBar.app` to `/Applications`, then right-click → **Open** the first time to bypass Gatekeeper.
+
+## Setup
+
+The app reads your API key from one of two places (in order):
+
+1. **Environment variable** — `LITELLM_API_KEY`
+2. **Config file** — `~/.config/litellmtracker/api_key`
+
+To use the config file:
+```sh
+mkdir -p ~/.config/litellmtracker
+echo "sk-your-key-here" > ~/.config/litellmtracker/api_key
+```
+
+Then open the app, go to **Settings**, enter your LiteLLM proxy base URL (e.g. `https://your-litellm-instance.example.com`), and click **Test & Refresh**.
+
+## Creating a LiteLLM Virtual Key
+
+In your LiteLLM proxy dashboard, go to **Virtual Keys** and create a new key with:
+
+- **Permissions**: Default (allows management routes including `/user/daily/activity`)
+- Copy the `sk-...` value and save it to `~/.config/litellmtracker/api_key` or paste it into the app's Settings
+
+> **Note:** Keys with restricted permissions (e.g. only `api` routes) will not be able to fetch spend data. The app needs access to `/user/daily/activity`.
+
+## Building from Source
 
 ```sh
+git clone https://github.com/LukaMucko/litellmtracker.git
+cd litellmtracker
 xcodebuild -scheme LiteLLMBar -destination 'platform=macOS,arch=arm64' build
 ```
 
-The project is configured for local signing with `CODE_SIGN_IDENTITY = -`, app sandboxing, and outbound network access. If `xcodebuild` reports that Command Line Tools are selected, install/select full Xcode:
-
+If `xcodebuild` complains about Command Line Tools, point it at full Xcode:
 ```sh
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 ```
 
-The Codex Run action and `./script/build_and_run.sh` use the same Xcode project and launch the built `.app`.
+No third-party dependencies — the project uses only Apple frameworks.
 
-## Create The LiteLLM Key
+## How It Works
 
-Open the LiteLLM dashboard at:
+The app polls one endpoint:
 
-```text
-https://llms.apps.aithyra.at/ui
 ```
-
-Go to the virtual key creation screen. Use these settings:
-
-- Key type: virtual key
-- Permissions: Default
-- Default means the key can call AI APIs and Management routes
-- Copy the generated `sk-...` key once and paste it into LiteLLMBar Settings
-
-The key creation screen should show a permissions selector where Default is the broad preset for ordinary API use plus management endpoints. Do not choose a restricted preset that excludes management routes, because spend activity is served by `/user/daily/activity`.
-
-If a key was pasted into chat or logs during testing, regenerate it in LiteLLM after validation.
-
-## Runtime Behavior
-
-- The menu bar label is plain text, for example `💸 $0.47`.
-- The popover uses `menuBarExtraStyle(.window)` and Liquid Glass cards/buttons.
-- API requests use `Authorization: Bearer {key}`.
-- A 401 response deletes the saved key, stops polling, and asks for an updated key.
-- Base URL, refresh interval, and currency are stored in `UserDefaults`.
-- The API key is stored using Keychain service `at.aithyra.litellm.menubar` and account `litellm-api-key`.
-- Launch at login uses `SMAppService.mainApp`.
-
-## Endpoint
-
-The app fetches:
-
-```text
 GET {baseURL}/user/daily/activity?start_date=YYYY-MM-DD&end_date=YYYY-MM-DD
 ```
 
-Dates are formatted in UTC as `yyyy-MM-dd`. The decoder is tolerant of missing optional breakdown fields and optional cache token fields.
+This returns per-day spend with a per-model breakdown. All data is stored in memory only; the API key is never written by the app (you place it in the config file yourself).
 
-## Developer ID Signing Later
+## License
 
-For Developer ID distribution, change signing from local signing to your Developer ID team in Xcode:
-
-- Set a real `DEVELOPMENT_TEAM`
-- Use Developer ID Application signing
-- Keep the sandbox and network client entitlement enabled
-- Archive and notarize the app before distribution
+MIT
