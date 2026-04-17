@@ -179,6 +179,7 @@ final class SpendStore {
     }
 
     func refreshKeyAndConnect() async {
+        await Task.detached { APIKeyStore.refreshFromShell() }.value
         hasAPIKey = APIKeyStore.load() != nil
         if hasAPIKey {
             bannerMessage = nil

@@ -101,11 +101,17 @@ private struct BannerView: View {
     let message: String
 
     var body: some View {
-        Label(message, systemImage: "exclamationmark.triangle.fill")
-            .font(.callout)
-            .foregroundStyle(.black)
-            .padding(12)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .spendGlassCard(cornerRadius: 12, tint: .yellow, interactive: true)
+        HStack(alignment: .top, spacing: 8) {
+            Image(systemName: "exclamationmark.triangle.fill")
+                .foregroundStyle(.black)
+            Text(message)
+                .fixedSize(horizontal: false, vertical: true)
+                .textSelection(.enabled)
+        }
+        .font(.callout)
+        .foregroundStyle(.black)
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .spendGlassCard(cornerRadius: 12, tint: .yellow, interactive: true)
     }
 }

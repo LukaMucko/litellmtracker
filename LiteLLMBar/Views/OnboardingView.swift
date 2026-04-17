@@ -22,6 +22,8 @@ struct OnboardingView: View {
                 Text(banner)
                     .font(.callout)
                     .foregroundStyle(.black)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .textSelection(.enabled)
                     .padding(12)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .spendGlassCard(cornerRadius: 12, tint: .yellow, interactive: true)
