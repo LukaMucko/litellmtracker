@@ -28,7 +28,7 @@ actor LiteLLMClient {
         self.dateFormatter = formatter
     }
 
-    func fetchActivity(start: Date, end: Date) async throws -> DailyActivity {
+    func fetchActivity(start: Date, end: Date, page: Int = 1, pageSize: Int = 1000) async throws -> DailyActivity {
         guard let apiKey = await apiKeyProvider(), !apiKey.isEmpty else {
             throw LiteLLMClientError.missingAPIKey
         }
@@ -38,7 +38,7 @@ actor LiteLLMClient {
 
         for attempt in 0...delays.count {
             do {
-                return try await performFetch(start: start, end: end, apiKey: apiKey)
+                return try await performFetch(start: start, end: end, apiKey: apiKey, page: page, pageSize: pageSize)
             } catch let error as LiteLLMClientError where error.isRetriable && attempt < delays.count {
                 lastError = error
                 try await Task.sleep(for: delays[attempt])
@@ -53,8 +53,25 @@ actor LiteLLMClient {
         throw lastError ?? LiteLLMClientError.invalidResponse
     }
 
-    private func performFetch(start: Date, end: Date, apiKey: String) async throws -> DailyActivity {
-        let url = try activityURL(start: start, end: end)
+    func fetchAllActivity(start: Date, end: Date) async throws -> DailyActivity {
+        let firstPage = try await fetchActivity(start: start, end: end, page: 1, pageSize: 1000)
+        guard firstPage.metadata.has_more else { return firstPage }
+
+        var allResults = firstPage.results
+        var page = 2
+        while true {
+            let pageActivity = try await fetchActivity(start: start, end: end, page: page, pageSize: 1000)
+            allResults.append(contentsOf: pageActivity.results)
+            if !pageActivity.metadata.has_more { break }
+            page += 1
+            if page > 100 { break } // safety valve
+        }
+
+        return DailyActivity(results: allResults, metadata: firstPage.metadata)
+    }
+
+    private func performFetch(start: Date, end: Date, apiKey: String, page: Int, pageSize: Int) async throws -> DailyActivity {
+        let url = try activityURL(start: start, end: end, page: page, pageSize: pageSize)
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
@@ -83,7 +100,7 @@ actor LiteLLMClient {
         }
     }
 
-    private func activityURL(start: Date, end: Date) throws -> URL {
+    private func activityURL(start: Date, end: Date, page: Int, pageSize: Int) throws -> URL {
         let endpoint = baseURL.appending(path: "user/daily/activity")
         guard var components = URLComponents(url: endpoint, resolvingAgainstBaseURL: false) else {
             throw LiteLLMClientError.invalidURL
@@ -91,7 +108,9 @@ actor LiteLLMClient {
 
         components.queryItems = [
             URLQueryItem(name: "start_date", value: dateFormatter.string(from: start)),
-            URLQueryItem(name: "end_date", value: dateFormatter.string(from: end))
+            URLQueryItem(name: "end_date", value: dateFormatter.string(from: end)),
+            URLQueryItem(name: "page", value: String(page)),
+            URLQueryItem(name: "page_size", value: String(pageSize))
         ]
 
         guard let url = components.url else {

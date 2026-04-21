@@ -38,7 +38,7 @@ struct SpendSummary: Equatable, Sendable {
         self.dailyPoints = dailyPoints
     }
 
-    init(activity: DailyActivity, now: Date = Date(), calendar: Calendar = .liteLLMUTC) {
+    init(activity: DailyActivity, now: Date = Date(), calendar: Calendar = .liteLLMUTC, allTimeSpend override: Double? = nil) {
         let today = calendar.startOfDay(for: now)
         let last7Start = calendar.date(byAdding: .day, value: -6, to: today) ?? today
         let monthStart = calendar.date(from: calendar.dateComponents([.year, .month], from: today)) ?? today
@@ -46,7 +46,6 @@ struct SpendSummary: Equatable, Sendable {
         var todaySpend = 0.0
         var last7Spend = 0.0
         var monthSpend = 0.0
-        var allTimeSpend = 0.0
         var cachedTokens = 0
         var totalTokens = 0
         var dailySpend: [Date: Double] = [:]
@@ -55,7 +54,6 @@ struct SpendSummary: Equatable, Sendable {
         for result in activity.results {
             guard let date = Self.date(from: result.date, calendar: calendar) else { continue }
 
-            allTimeSpend += result.metrics.spend
             cachedTokens += result.metrics.cachedTokens
             totalTokens += result.metrics.total_tokens
             dailySpend[date, default: 0] += result.metrics.spend
@@ -74,6 +72,9 @@ struct SpendSummary: Equatable, Sendable {
                 models[model, default: ModelAccumulator()].add(entry.metrics)
             }
         }
+
+        let computedAllTimeSpend = activity.results.reduce(0) { $0 + $1.metrics.spend }
+        let allTimeSpend = override ?? (activity.metadata.total_spend > 0 ? activity.metadata.total_spend : computedAllTimeSpend)
 
         let topModels = models
             .map { model, acc in

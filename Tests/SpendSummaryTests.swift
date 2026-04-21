@@ -75,4 +75,42 @@ struct SpendSummaryTests {
         #expect(summary.cachedTokens == 1500)
         #expect(summary.topModels.first?.model == "gpt-5.4")
     }
+
+    @Test
+    func allTimeSpendPrefersMetadataTotalOverIncompleteResults() throws {
+        let json = """
+        {
+          "results": [
+            {
+              "date": "2026-04-17",
+              "metrics": {
+                "spend": 0.50,
+                "prompt_tokens": 25,
+                "completion_tokens": 25,
+                "total_tokens": 50,
+                "api_requests": 1
+              },
+              "breakdown": {
+                "models": {}
+              }
+            }
+          ],
+          "metadata": {
+            "total_spend": 100.00,
+            "total_prompt_tokens": 25,
+            "total_completion_tokens": 25,
+            "total_api_requests": 1
+          }
+        }
+        """
+
+        let activity = try JSONDecoder().decode(DailyActivity.self, from: Data(json.utf8))
+        let now = Calendar.liteLLMUTC.date(from: DateComponents(year: 2026, month: 4, day: 17))!
+        let summary = SpendSummary(activity: activity, now: now)
+
+        #expect(abs(summary.todaySpend - 0.50) < 0.0001)
+        #expect(abs(summary.last7Spend - 0.50) < 0.0001)
+        #expect(abs(summary.monthSpend - 0.50) < 0.0001)
+        #expect(abs(summary.allTimeSpend - 100.00) < 0.0001)
+    }
 }

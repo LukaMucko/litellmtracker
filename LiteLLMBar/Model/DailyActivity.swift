@@ -9,12 +9,14 @@ struct DailyActivity: Decodable, Sendable {
         let total_prompt_tokens: Int
         let total_completion_tokens: Int
         let total_api_requests: Int
+        let has_more: Bool
 
         enum CodingKeys: String, CodingKey {
             case total_spend
             case total_prompt_tokens
             case total_completion_tokens
             case total_api_requests
+            case has_more
         }
 
         init(from decoder: Decoder) throws {
@@ -23,20 +25,23 @@ struct DailyActivity: Decodable, Sendable {
             total_prompt_tokens = try container.decodeLossyInt(forKey: .total_prompt_tokens)
             total_completion_tokens = try container.decodeLossyInt(forKey: .total_completion_tokens)
             total_api_requests = try container.decodeLossyInt(forKey: .total_api_requests)
+            has_more = try container.decodeIfPresent(Bool.self, forKey: .has_more) ?? false
         }
 
         static let empty = Metadata(
             total_spend: 0,
             total_prompt_tokens: 0,
             total_completion_tokens: 0,
-            total_api_requests: 0
+            total_api_requests: 0,
+            has_more: false
         )
 
-        init(total_spend: Double, total_prompt_tokens: Int, total_completion_tokens: Int, total_api_requests: Int) {
+        init(total_spend: Double, total_prompt_tokens: Int, total_completion_tokens: Int, total_api_requests: Int, has_more: Bool = false) {
             self.total_spend = total_spend
             self.total_prompt_tokens = total_prompt_tokens
             self.total_completion_tokens = total_completion_tokens
             self.total_api_requests = total_api_requests
+            self.has_more = has_more
         }
     }
 
@@ -49,6 +54,11 @@ struct DailyActivity: Decodable, Sendable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         results = try container.decodeIfPresent([DailyResult].self, forKey: .results) ?? []
         metadata = try container.decodeIfPresent(Metadata.self, forKey: .metadata) ?? .empty
+    }
+
+    init(results: [DailyResult], metadata: Metadata) {
+        self.results = results
+        self.metadata = metadata
     }
 }
 

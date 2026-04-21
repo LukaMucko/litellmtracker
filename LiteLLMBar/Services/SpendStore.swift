@@ -160,8 +160,28 @@ final class SpendStore {
 
         do {
             let now = Date()
-            let activity = try await client.fetchActivity(start: Self.allTimeStartDate, end: now)
-            summary = SpendSummary(activity: activity, now: now)
+            let calendar = Calendar.liteLLMUTC
+            let today = calendar.startOfDay(for: now)
+            let monthStart = calendar.date(from: calendar.dateComponents([.year, .month], from: today)) ?? today
+            let thirtyDaysAgo = calendar.date(byAdding: .day, value: -29, to: today) ?? today
+            let detailsStart = min(monthStart, thirtyDaysAgo)
+
+            // Fetch full-history metadata for all-time spend (page 1 is enough
+            // because metadata.total_spend is the query total), and fetch ALL
+            // pages for the recent range so daily/weekly/monthly/chart data is
+            // complete.
+            async let allTimeTask = client.fetchActivity(start: Self.allTimeStartDate, end: now)
+            let detailsActivity = try await client.fetchAllActivity(start: detailsStart, end: now)
+
+            var newSummary = SpendSummary(activity: detailsActivity, now: now)
+            do {
+                let allTimeActivity = try await allTimeTask
+                newSummary = SpendSummary(activity: detailsActivity, now: now, allTimeSpend: allTimeActivity.metadata.total_spend)
+            } catch {
+                // leave all-time computed from the details range
+            }
+
+            summary = newSummary
             lastRefresh = Date()
             bannerMessage = nil
             loadState = .loaded
